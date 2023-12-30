@@ -24,4 +24,9 @@ public class StudentController {
     public Student CreateNewStudent(@RequestBody Student student){
         return studentService.AddStudent(student);
     }
+
+    @DeleteMapping(path = "{studentId}")
+    public void deleteStudent(@PathVariable("studentId") Long id){
+        studentService.DeleteStudent(id);
+    }
 }
